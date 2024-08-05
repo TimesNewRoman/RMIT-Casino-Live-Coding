@@ -8,11 +8,19 @@
 import SwiftUI
 
 struct LogoView: View {
+    let logoFileName: String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Image(logoFileName)
+            .resizable()
+            .scaledToFit()
+            .frame(minWidth: 250, idealWidth: 280,
+                   maxWidth: 320,
+                   alignment: .center)
+            .modifier(ShadowModifier())
     }
 }
 
 #Preview {
-    LogoView()
+    LogoView(logoFileName: "rmit-casino-welcome-logo")
 }
